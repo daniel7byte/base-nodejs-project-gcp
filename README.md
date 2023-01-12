@@ -2,73 +2,73 @@
 
 ## Instalacion
 
-Para instalar el proyecto, hemos preparado los contenedores en Docker para facilitar los pasos. Asi que es importante que tengas instalado tanto Docker como docker compose en tu sistema operativo, ya sea Windows, Mac o Linux. Si no lo tienes, puedes hacerlo [siguiendo la documentacion de Docker](https://docs.docker.com/engine/install/) 🐋
+To install the project, we had prepared the containers in Docker to facilitate the steps. So it is important that you have installed both Docker and docker compose on your operating system, whether Windows, Mac or Linux. If you don't have it, you can do it [following the Docker documentation](https://docs.docker.com/engine/install/) 🐋
 
 <blockquote>
 <span>
 💡
 </span>
 <span>
-Si instalas Docker Desktop (en Windows y Mac), ya viene con docker compose, pero si lo haces en Linux debes instalarlo a parte.
+If you install Docker Desktop (in Windows and Mac), it comes with docker compose, but if you do it in Linux you must install it separately.
 </span>
 </blockquote>
 
-#### Paso 1
+#### Step 1
 
-Clonar el proyecto
+Clone the repository
 
 ```
 $ git clone git@github.com:daniel7byte/base-nodejs-project-gcp.git
 ```
 
-#### Paso 2
+#### Step 2
 
-Duplicar el archivo `.env.example` y renombrar al nuevo archivo `.env`. Luego, debes colocar la informacion correspondiente en las variables de entorno.
+Duplicate the file `.env.example` and rename to `.env`. Then, you must put the information in the environment variables.
 
-#### Paso 3
+#### Step 3
 
-Montar la infraestructura con los contenedores de docker, esto lo haces ejecutando el siguiente comando en la terminal, estando desde el path del proyecto.
+To mount the infrastructure with the docker containers, you do this by running the following command in the terminal, being from the path of the project.
 
 ```
 $ docker-compose up -d
 ```
 
-Este comando construira una serie de contenedores conectados que hacen posible el funcionamiento de `base-project-backend`: node, postgres y redis.
+This command will create a series of containers connected that make possible the operation of `base-project-backend`: node, postgres and redis.
 
-#### Paso 4
+#### Step 4
 
-Instalar dependencias
+To install the dependencies
 
 ```
 $ npm install
 ```
 
-#### Paso 5
+#### Step 5
 
-Realizar las migraciones de la base de datos ejecutando el siguiente comando
+To run the migrations, you must execute the following command
 
 ```
 $ npm run db:migrate
 ```
 
-#### Paso 6
+#### Step 6
 
-Levantar el servidor
+To run the server, you must execute the following command
 
 ```
 $ npm run dev
 ```
 
-#### Paso 7
+#### Step 7
 
-[Probar instalacion](http://localhost:3000)
+[Test the installation here](http://localhost:3000)
 
 <blockquote>
 <span>
 💡
 </span>
 <span>
-Si tienes algun problema al momento de realizar uno de estos pasos, no dudes en preguntar.
+If you have any problem when doing one of these Steps, do not hesitate to ask.
 </span>
 </blockquote>
 
