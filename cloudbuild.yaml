@@ -1,0 +1,55 @@
+steps:
+  # Install dependencies
+  - id: 'npm-install'
+    name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
+
+  # Installing sequelize-cli
+  - id: 'npm-install-sequelize-cli'
+    name: 'gcr.io/cloud-builders/npm'
+    args: ['install', 'sequelize-cli']
+
+  # Install CLoud SQL proxy
+  - id: proxy-install
+    name: 'gcr.io/cloud-builders/npm'
+    entrypoint: sh
+    args:
+      - '-c'
+      - 'wget -O /workspace/cloud_sql_proxy https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 && chmod +x /workspace/cloud_sql_proxy'
+    waitFor: ['-']
+
+  # Migrate database schema to the latest version
+  - id: 'sequelize-migrate'
+    name: 'gcr.io/cloud-builders/npm'
+    entrypoint: sh
+    args:
+      - '-c'
+      - '(/workspace/cloud_sql_proxy -dir=/workspace -instances=$_CLOUDSQL_CONNECTION_NAME=tcp:5432 & sleep 2) && npm run db:migrate'
+    timeout: '1200s'
+    env:
+      - 'NODE_TLS_REJECT_UNAUTHORIZED=$_NODE_TLS_REJECT_UNAUTHORIZED'
+      - 'DB_DRIVER=$_DB_DRIVER'
+      - 'DB_CONNECTION_NAME=$_CLOUDSQL_CONNECTION_NAME'
+      - 'DB_USER=$_CLOUDSQL_USER'
+      - 'DB_PASS=$_CLOUDSQL_PASS'
+      - 'DB_NAME=$_CLOUDSQL_NAME'
+    waitFor: ['npm-install', 'npm-install-sequelize-cli', 'proxy-install']
+
+  # Run deploy
+  - id: 'gcloud-deploy'
+    name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - functions
+      - deploy
+      - project # name of the function in index.js
+      - --source=.
+      - --trigger-http
+      - --runtime=nodejs16
+      - --verbosity=debug
+    env:
+      # - "NODE_TLS_REJECT_UNAUTHORIZED=_NODE_TLS_REJECT_UNAUTHORIZED"
+      - 'DB_DRIVER=_DB_DRIVER'
+      - 'DB_CONNECTION_NAME=_CLOUDSQL_CONNECTION_NAME'
+      - 'DB_USER=_CLOUDSQL_USER'
+      - 'DB_PASS=_CLOUDSQL_PASS'
+      - 'DB_NAME=_CLOUDSQL_NAME'
