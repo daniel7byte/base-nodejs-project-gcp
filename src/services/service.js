@@ -4,55 +4,51 @@ class Service {
     this.model = 'Modelo'
   }
 
-  async create (res, body) {
+  async create (body) {
     const data = await this.repository.create(body)
-    return res
-      .status(201)
-      .json({ data, status: 201, message: `${this.model} creado` })
+
+    if (!data) {
+      throw new Error('Not created')
+    }
+
+    return data
   }
 
-  async findAll (res, options = {}) {
+  async findAll (options = {}) {
     const data = await this.repository.findAll(options)
-    return res
-      .status(200)
-      .json({ data, status: 200, message: `Lista de ${this.model}` })
+
+    if (!data) {
+      throw new Error('Internal server error')
+    }
+
+    return data
   }
 
-  async findOne (res, options) {
+  async findOne (options) {
     const data = await this.repository.findOne(options)
 
     if (!data) {
-      return res
-        .status(400)
-        .json()
+      throw new Error('Not found')
     }
 
-    return res
-      .status(200)
-      .json({ data, status: 200, message: `${this.model}` })
+    return data
   }
 
-  async findByPk (res, id) {
+  async findByPk (id) {
     const data = await this.repository.findByPk(id)
 
     if (!data) {
-      return res
-        .status(400)
-        .json()
+      throw new Error('Not found')
     }
 
-    return res
-      .status(200)
-      .json({ data, status: 200, message: `${this.model} de id ${id}` })
+    return data
   }
 
-  async update (res, id, body) {
+  async update (id, body) {
     const data = await this.repository.findByPk(id)
 
     if (!data) {
-      return res
-        .status(400)
-        .json()
+      throw new Error('Not found')
     }
 
     const payload = {
@@ -62,25 +58,19 @@ class Service {
 
     await this.repository.update(id, payload)
 
-    return res
-      .status(200)
-      .json({ data: payload, status: 200, message: `${this.model} actualizado` })
+    return payload
   }
 
-  async remove (res, id) {
+  async remove (id) {
     const data = await this.repository.findByPk(id)
 
     if (!data) {
-      return res
-        .status(400)
-        .json()
+      throw new Error('Not found')
     }
 
     await this.repository.remove(id)
 
-    return res
-      .status(204)
-      .json({ data: null, status: 204, message: `${this.model} eliminado` })
+    return null
   }
 }
 

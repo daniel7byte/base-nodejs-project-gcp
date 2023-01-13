@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate (models) {
       // define association here
       this.hasMany(models.state, { as: 'states', foreignKey: 'country_id', onUpdate: 'CASCADE', onDelete: 'RESTRICT' });
+      this.hasMany(models.user, { as: 'users', foreignKey: 'country_id', onUpdate: 'CASCADE', onDelete: 'RESTRICT' });
     }
   }
   country.init({
