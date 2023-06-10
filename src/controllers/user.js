@@ -14,9 +14,11 @@ UserController.findAll = async (req, res) => {
   try {
     const user = await new UserService().findAll()
     return res.status(OK).json(http.response(user, OK, 'User found'))
+    http.successResponse(res, OK, 'User found', user)
   } catch (error) {
     console.error(error)
     return res.status(NOT_FOUND).json(http.response(error, NOT_FOUND, 'User not found'))
+    http.errorResponse(res, OK, 'User found', user)
   }
 }
 UserController.findOne = async (req, res) => {
