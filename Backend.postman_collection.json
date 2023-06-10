@@ -1,619 +1,619 @@
 {
-	"info": {
-		"_postman_id": "4b78e24e-5306-48da-8019-cec4d33f40fa",
-		"name": "Backend",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "959270"
-	},
-	"item": [
-		{
-			"name": "Country",
-			"item": [
-				{
-					"name": "findAll",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{endpoint}}/country",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"country"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "findOne",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{endpoint}}/country/:countryId",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"country",
-								":countryId"
-							],
-							"variable": [
-								{
-									"key": "countryId",
-									"value": "01ec4913-5042-4a88-ab67-a9ead82da63c"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "remove",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{endpoint}}/country/:countryId",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"country",
-								":countryId"
-							],
-							"variable": [
-								{
-									"key": "countryId",
-									"value": "8a2b2e3b-0a20-44be-b82f-7ff9918de245"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Venezuela\",\n    \"acronym\": \"VEZ\",\n    \"code\": 58,\n    \"is_available\": false\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{endpoint}}/country",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"country"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Republica Dominicana\",\n    \"acronym\": \"RD\",\n    \"code\": 2,\n    \"is_available\": true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{endpoint}}/country/:countryId",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"country",
-								":countryId"
-							],
-							"variable": [
-								{
-									"key": "countryId",
-									"value": "01ec4913-5042-4a88-ab67-a9ead82da63c"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "State",
-			"item": [
-				{
-					"name": "findAll",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{endpoint}}/state",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"state"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "findOne",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{endpoint}}/state/:stateId",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"state",
-								":stateId"
-							],
-							"variable": [
-								{
-									"key": "stateId",
-									"value": "a549b64c-bf94-4b48-a589-c4a5cb91c937"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "remove",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{endpoint}}/state/:stateId",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"state",
-								":stateId"
-							],
-							"variable": [
-								{
-									"key": "stateId",
-									"value": "370acbf5-397f-4b20-90f1-0920cd723800"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Cauca\",\n    \"country_id\": \"0c526207-29e6-4397-928b-5c036b535c8d\",\n    \"is_available\": false\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{endpoint}}/state",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"state"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Cauca\",\n    \"country_id\": \"0c526207-29e6-4397-928b-5c036b535c8d\",\n    \"is_available\": false\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{endpoint}}/state/:stateId",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"state",
-								":stateId"
-							],
-							"variable": [
-								{
-									"key": "stateId",
-									"value": null
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "City",
-			"item": [
-				{
-					"name": "findAll",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{endpoint}}/city",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"city"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "findOne",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{endpoint}}/city/:cityId",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"city",
-								":cityId"
-							],
-							"variable": [
-								{
-									"key": "cityId",
-									"value": "4f4c17e3-aaf5-4301-840d-a38d1987a5d9"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "remove",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{endpoint}}/city/:cityId",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"city",
-								":cityId"
-							],
-							"variable": [
-								{
-									"key": "cityId",
-									"value": null
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"La Union\",\n    \"state_id\": \"31a28573-83c7-4e87-baf7-fa768a7dd55e\",\n    \"is_available\": false\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{endpoint}}/city",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"city"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"La Union\",\n    \"state_id\": \"31a28573-83c7-4e87-baf7-fa768a7dd55e\",\n    \"is_available\": false\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{endpoint}}/city/:cityId",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"city",
-								":cityId"
-							],
-							"variable": [
-								{
-									"key": "cityId",
-									"value": null
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "User",
-			"item": [
-				{
-					"name": "findAll",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{endpoint}}/user",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"user"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "findOne",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{endpoint}}/user/:userId",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"user",
-								":userId"
-							],
-							"variable": [
-								{
-									"key": "userId",
-									"value": "4f7874f8-d295-48c1-8a63-21a6376dce19"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "remove",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{endpoint}}/user/:userId",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"user",
-								":userId"
-							],
-							"variable": [
-								{
-									"key": "userId",
-									"value": "ce1a0375-654f-4182-921d-d500c9b072c8"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"first_name\": \"Jose\",\n    \"last_name\": \"Posso\",\n    \"email\": \"jose.posso@gingertec.do\",\n    \"password\": \"secret\",\n    \"phone\": \"3123898150\",\n    \"role\": \"admin\",\n    \"country_id\": \"0c526207-29e6-4397-928b-5c036b535c8d\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{endpoint}}/user",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"user"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"first_name\": \"Jose\",\n    \"last_name\": \"Posso\",\n    \"email\": \"jose.posso@gingertec.do\",\n    \"password\": \"secret\",\n    \"phone\": \"3123898150\",\n    \"role\": \"admin\",\n    \"country_id\": \"0c526207-29e6-4397-928b-5c036b535c8d\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{endpoint}}/user/:userId",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"user",
-								":userId"
-							],
-							"variable": [
-								{
-									"key": "userId",
-									"value": "4f7874f8-d295-48c1-8a63-21a6376dce19"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Auth",
-			"item": [
-				{
-					"name": "login",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.globals.set('token', pm.response.json().data.token)"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"jose.posso@gingertec.do\",\n    \"password\": \"secret\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{endpoint}}/auth/login",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"auth",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "refresh",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{endpoint}}/auth/refresh",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"auth",
-								"refresh"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "4b78e24e-5306-48da-8019-cec4d33f40fa",
+    "name": "Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "959270"
+  },
+  "item": [
+    {
+      "name": "Country",
+      "item": [
+        {
+          "name": "findAll",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/country",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "country"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "findOne",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/country/:countryId",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "country",
+                ":countryId"
+              ],
+              "variable": [
+                {
+                  "key": "countryId",
+                  "value": "01ec4913-5042-4a88-ab67-a9ead82da63c"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "remove",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/country/:countryId",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "country",
+                ":countryId"
+              ],
+              "variable": [
+                {
+                  "key": "countryId",
+                  "value": "8a2b2e3b-0a20-44be-b82f-7ff9918de245"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Venezuela\",\n    \"acronym\": \"VEZ\",\n    \"code\": 58,\n    \"is_available\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/country",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "country"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Republica Dominicana\",\n    \"acronym\": \"RD\",\n    \"code\": 2,\n    \"is_available\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/country/:countryId",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "country",
+                ":countryId"
+              ],
+              "variable": [
+                {
+                  "key": "countryId",
+                  "value": "01ec4913-5042-4a88-ab67-a9ead82da63c"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "State",
+      "item": [
+        {
+          "name": "findAll",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/state",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "state"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "findOne",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/state/:stateId",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "state",
+                ":stateId"
+              ],
+              "variable": [
+                {
+                  "key": "stateId",
+                  "value": "a549b64c-bf94-4b48-a589-c4a5cb91c937"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "remove",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/state/:stateId",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "state",
+                ":stateId"
+              ],
+              "variable": [
+                {
+                  "key": "stateId",
+                  "value": "370acbf5-397f-4b20-90f1-0920cd723800"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Cauca\",\n    \"country_id\": \"0c526207-29e6-4397-928b-5c036b535c8d\",\n    \"is_available\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/state",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "state"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Cauca\",\n    \"country_id\": \"0c526207-29e6-4397-928b-5c036b535c8d\",\n    \"is_available\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/state/:stateId",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "state",
+                ":stateId"
+              ],
+              "variable": [
+                {
+                  "key": "stateId",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "City",
+      "item": [
+        {
+          "name": "findAll",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/city",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "city"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "findOne",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/city/:cityId",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "city",
+                ":cityId"
+              ],
+              "variable": [
+                {
+                  "key": "cityId",
+                  "value": "4f4c17e3-aaf5-4301-840d-a38d1987a5d9"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "remove",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/city/:cityId",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "city",
+                ":cityId"
+              ],
+              "variable": [
+                {
+                  "key": "cityId",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"La Union\",\n    \"state_id\": \"31a28573-83c7-4e87-baf7-fa768a7dd55e\",\n    \"is_available\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/city",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "city"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"La Union\",\n    \"state_id\": \"31a28573-83c7-4e87-baf7-fa768a7dd55e\",\n    \"is_available\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/city/:cityId",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "city",
+                ":cityId"
+              ],
+              "variable": [
+                {
+                  "key": "cityId",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "findAll",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/user",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "findOne",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/user/:userId",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "user",
+                ":userId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "4f7874f8-d295-48c1-8a63-21a6376dce19"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "remove",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/user/:userId",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "user",
+                ":userId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "ce1a0375-654f-4182-921d-d500c9b072c8"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"first_name\": \"Jose\",\n    \"last_name\": \"Posso\",\n    \"email\": \"jose.posso@utp.edu.co\",\n    \"password\": \"secret\",\n    \"phone\": \"3123898150\",\n    \"role\": \"admin\",\n    \"country_id\": \"0c526207-29e6-4397-928b-5c036b535c8d\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/user",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"first_name\": \"Jose\",\n    \"last_name\": \"Posso\",\n    \"email\": \"jose.posso@utp.edu.co\",\n    \"password\": \"secret\",\n    \"phone\": \"3123898150\",\n    \"role\": \"admin\",\n    \"country_id\": \"0c526207-29e6-4397-928b-5c036b535c8d\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/user/:userId",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "user",
+                ":userId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "4f7874f8-d295-48c1-8a63-21a6376dce19"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.globals.set('token', pm.response.json().data.token)"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"jose.posso@utp.edu.co\",\n    \"password\": \"secret\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/auth/login",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "refresh",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/auth/refresh",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "auth",
+                "refresh"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
 }
